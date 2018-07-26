@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DefaultForeColor>#FFC0C0C0</DefaultForeColor>
+  <CommentForeColor>#FF228B22</CommentForeColor>
+  <CommentLineForeColor>#FF228B22</CommentLineForeColor>
+  <CommentLineDocForeColor>#FF228B22</CommentLineDocForeColor>
+  <NumberForeColor>#FF4B0082</NumberForeColor>
+  <WordForeColor>#FF0000FF</WordForeColor>
+  <Word2ForeColor>#FF0000FF</Word2ForeColor>
+  <StringForeColor>#FFA31515</StringForeColor>
+  <CharacterForeColor>#FFA31515</CharacterForeColor>
+  <VerbatimForeColor>#FFFFD700</VerbatimForeColor>
+  <StringEolBackColor>#FFFFC0CB</StringEolBackColor>
+  <OperatorForeColor>#FF800080</OperatorForeColor>
+  <PreprocessorForeColor>#FF8B0000</PreprocessorForeColor>
+  <marginWidth>40</marginWidth>
+  <font>Consolas</font>
+  <fontSize>15</fontSize>
+  <compilerPath>C:\Users\1\OneDrive\ide\ide\bin\Debug\MinGW\bin</compilerPath>
+</Configuration>

@@ -1,0 +1,50 @@
+﻿<Window x:Class="ide.Settings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ide"
+        xmlns:sn="http://scintillanet.codeplex.com"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="Settings" Height="400" Width="550" ResizeMode="NoResize">
+    <Grid>
+
+
+        <xctk:ColorPicker Name="ClrPcker_Background" Margin="110,19,0,0" RenderTransformOrigin="0.1,0.1" HorizontalAlignment="Left" Width="121" Height="33" VerticalAlignment="Top"/>
+
+        <Button Content="Save" HorizontalAlignment="Left" Margin="42,301,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="Button_Click"/>
+        <Label Content="Default color: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,20,0,0"/>
+        <xctk:ColorPicker x:Name="ClrPcker_Comment"  Margin="110,59,0,0" RenderTransformOrigin="0.1,0.1" HorizontalAlignment="Left" Width="121" Height="33" VerticalAlignment="Top"/>
+        <Label Content="Comment color: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,60,0,0"/>
+        <xctk:ColorPicker x:Name="ClrPcker_Number"  Margin="110,99,0,0" RenderTransformOrigin="0.1,0.1" HorizontalAlignment="Left" Width="121" Height="33" VerticalAlignment="Top"/>
+        <Label Content="Number color: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,100,0,0"/>
+        <xctk:ColorPicker x:Name="ClrPcker_Word"  Margin="110,137,0,0" RenderTransformOrigin="0.1,0.1" HorizontalAlignment="Left" Width="121" Height="33" VerticalAlignment="Top"/>
+        <Label Content="Word color: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,138,0,0"/>
+        <xctk:ColorPicker x:Name="ClrPcker_String"  Margin="110,177,0,0" RenderTransformOrigin="0.1,0.1" HorizontalAlignment="Left" Width="121" Height="33" VerticalAlignment="Top"/>
+        <Label Content="String color: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,178,0,0"/>
+        <xctk:ColorPicker x:Name="ClrPcker_StringBack"  Margin="110,215,0,0" RenderTransformOrigin="0.1,0.1" HorizontalAlignment="Left" Width="121" Height="33" VerticalAlignment="Top"/>
+        <Label Content="String backcolor: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,216,0,0"/>
+        <xctk:ColorPicker x:Name="ClrPcker_Char"  Margin="402,20,0,0" RenderTransformOrigin="0.1,0.1" HorizontalAlignment="Left" Width="121" Height="33" VerticalAlignment="Top"/>
+        <Label Content="Char color: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="307,21,0,0"/>
+        <xctk:ColorPicker x:Name="ClrPcker_Verbatim"  Margin="402,58,0,0" RenderTransformOrigin="0.1,0.1" HorizontalAlignment="Left" Width="121" Height="33" VerticalAlignment="Top"/>
+        <Label Content="Verbatim color: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="307,59,0,0"/>
+        <xctk:ColorPicker x:Name="ClrPcker_Operator"  Margin="402,98,0,0" RenderTransformOrigin="0.1,0.1" HorizontalAlignment="Left" Width="121" Height="33" VerticalAlignment="Top"/>
+        <Label Content="Operator color: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="307,99,0,0"/>
+        <xctk:ColorPicker x:Name="ClrPcker_Preprocessor"  Margin="402,136,0,0" RenderTransformOrigin="0.1,0.1" HorizontalAlignment="Left" Width="121" Height="33" VerticalAlignment="Top"/>
+        <Label Content="Preprocessor : " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="307,137,0,0"/>
+        <Label Content="Font size : " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="307,174,0,0"/>
+        <TextBox Name="txt_FontSize" HorizontalAlignment="Left" Height="23" Margin="402,177,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <ComboBox Name="combo_Font" HorizontalAlignment="Left" Margin="402,208,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Font : " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="307,204,0,0"/>
+        <Label Content="Line number width : " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="307,234,0,0"/>
+        <TextBox x:Name="txt_Line" HorizontalAlignment="Left" Height="23" Margin="447,237,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75"/>
+
+
+        <Label Content="Compiler path : " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16,257,0,0"/>
+        <TextBox x:Name="txt_Path" HorizontalAlignment="Left" Height="23" Margin="109,260,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="192"/>
+        <Button Content="..." HorizontalAlignment="Left" Margin="300,260,0,0" VerticalAlignment="Top" Width="30" Height="23" RenderTransformOrigin="0.533,0" Click="Button_Click_1"/>
+
+
+    </Grid>
+</Window>

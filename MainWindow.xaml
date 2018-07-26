@@ -1,0 +1,121 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ide"
+        xmlns:sn="http://scintillanet.codeplex.com" x:Class="ide.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="500" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Closing="Window_Closing" WindowState="Maximized">
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="50" MaxWidth="400" Width="130" />
+            <ColumnDefinition Width="3" />
+            <ColumnDefinition Width="*" />
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="3" />
+            <RowDefinition MinHeight="50" MaxHeight="400" Height="3*" />
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" HorizontalAlignment="Stretch" Height="30" VerticalAlignment="Top">
+            <MenuItem Header="File" Height="30" Width="40">
+                <MenuItem  Header="New Project" HorizontalAlignment="Left" Height="25" Width="160" Click="MenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources\new.bmp"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Name="btnNewFile" Header="New File" IsEnabled="false" HorizontalAlignment="Left" Height="25" Width="160" Click="MenuItem_Click_4"/>
+                <MenuItem Header="Open Project" HorizontalAlignment="Left" Height="25" Width="160" Click="MenuItem_Click_1">
+                    <MenuItem.Icon>
+                        <Image Source="Resources\open.bmp"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+
+                <MenuItem Name="btnSave" IsEnabled="false" Header="Save" HorizontalAlignment="Left" Height="25" Width="160" Click="MenuItem_Click_2">
+                    <MenuItem.Icon>
+                        <Image Source="Resources\save.bmp"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+
+                <MenuItem Header="Refresh" HorizontalAlignment="Left" Height="25" Width="160" Click="MenuItem_Click_7"/>
+                <MenuItem Header="Settings" HorizontalAlignment="Left" Height="25" Width="160" Click="MenuItem_Click_8"/>
+
+                <MenuItem Header="Exit" HorizontalAlignment="Left" Height="25" Width="160" Click="MenuItem_Click_3">
+                    
+                </MenuItem>
+                
+
+
+            </MenuItem>
+            
+            <MenuItem  ToolTip="Compile" Height="26" Width="30" Click="MenuItem_Click_5" Margin="100,0, 0,0">
+                <MenuItem.Icon>
+                    <Image Source="Resources\build.bmp"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem ToolTip="Compile and Run" Height="25" Width="30" Click="MenuItem_Click_6" Margin="10,0,0,0">
+                <MenuItem.Icon>
+                    <Image Source="Resources\run.png"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            
+        </Menu>
+        <TabControl Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TabItem Header="Compiler">
+                <Grid Background="#FFE5E5E5">
+                    <RichTextBox Name="richTextBox1" IsReadOnly="true" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" >
+                        <FlowDocument>
+                            <Paragraph>
+                                <Run Text=""/>
+                            </Paragraph>
+                        </FlowDocument>
+                    </RichTextBox>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Errors">
+                <Grid Background="#FFE5E5E5">
+                    <ListView Name="errorListView" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MouseDoubleClick="errorListView_MouseDoubleClick">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Performance" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="80">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="Clear" Click="ClearChart"/>
+                        </ContextMenu>
+                    </Grid.ContextMenu>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <lvc:CartesianChart Name="ramChart" Series="{Binding ramValues}"  Grid.Column="0"/>
+                    <lvc:CartesianChart Name="cpuChart"  Series="{Binding cpuValues}"  Grid.Column="1"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <sn:ScintillaWPF IsEnabled="false" Name="editor" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CharAdded="editor_CharAdded"/>
+        <GridSplitter Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"/>
+        <GridSplitter Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"/>
+        <TreeView Background="AliceBlue" Name="treeView1" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MouseDoubleClick="treeView1_MouseDoubleClick"/>
+
+
+
+
+    </Grid>
+
+</Window>
